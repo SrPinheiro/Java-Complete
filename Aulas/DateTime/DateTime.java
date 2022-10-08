@@ -3,6 +3,7 @@ package DateTime;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
 public class DateTime {
@@ -65,6 +66,17 @@ public class DateTime {
         LocalDateTime data11 = LocalDateTime.of(2022,01,25,12,30,20);
         System.out.println("Data11: " + data11); //GERANDO UMA DATAHORA
 
+        System.out.println("----------------");
+
+        DateTimeFormatter formatador3 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+        LocalDateTime data12 = LocalDateTime.parse("11/10/2022 01:00", formatador2);
+        System.out.println("Data12: " + data12.format(formatador3)); //Formantando a data
+        System.out.println("Data12: " + formatador3.format(data12));
+
+        System.out.println("----------------");
+        Instant data13 = Instant.now(); //Formatando uma instante!
+        DateTimeFormatter formatador4 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm").withZone(ZoneId.systemDefault());
+        System.out.println(formatador4.format(data13));
 
 
     }
