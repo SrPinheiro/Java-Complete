@@ -1,4 +1,4 @@
-package Aulas.Fundamentos.A1Estoque.Entities;
+package Entities;
 
 public class Product {
     private String name;
@@ -50,5 +50,10 @@ public class Product {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    @Override
+    public String toString() {
+        return this.name;
     }
 }
