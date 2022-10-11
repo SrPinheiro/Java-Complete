@@ -75,6 +75,9 @@ git reset --hard HEAD~1
 //esse comando ira atualizar o repositorio remoto de acordo com o repositorio remoto
 git pull (remote) (branch) ex: git pull origin main
 
+//esse comando ira trocar o repositorio repositorio remoto
+git remote set-url origin (link repositorio)
+
 
 
 
