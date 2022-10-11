@@ -1,0 +1,83 @@
+Fazendo configurações inicias:
+
+        git config --list                           //Esse comando ira listar as configurações do git
+        git config --global user.name "SeuNome"     //comando usado para adicionar seu nome de usuario ao git
+        git config --global user.email "SeuEmail"   //Comando usado para adicionar seu email ao git
+
+
+Adicionando uma chave SSH ao github:
+//A chave SSH é um meio de registro muito mais seguro do que um login/senha
+
+        ssh-keygen -t ed25519 -C "your_email@example.com"
+
+        ou
+
+        ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+
+
+
+//esse comando ira iniciar um novo repositorio local
+git init
+
+//esse comando ira adicionar os arquivos para a area de stage
+git add (arquivo)
+
+//esse comando ira realizar um commit
+git commit -m "mensagem"
+
+//esse comando ira selecionar a branch "main" (nos sistemas mais antigos, a branch padrão era a master)
+git branch -M main
+
+//esse comando ira linkar o repositorio local com um repositorio remoto
+git remote add origin git@github.com:Usuario/Repositorio.git
+
+//esse comando ira enviar o commit do repositorio local para o repositorio remoto
+git push -u origin main (git push)
+
+//esse comando ira mostrar o status das modificações dos arquivos
+git status
+
+//esse comando ira clonar um repositorio do github (para clonar um repositorio você precisa ter permisão de acesso)
+git clone LinkRepositorio
+
+//esse comando ira mostar o historico de versões
+git log (git log --oneline)
+
+//esse comando ira mostrar o historico de modificações de um arquivo
+git diff (DiretorioDoArquivo)
+
+//esse comando permite modificar temporariamente os arquivos de um commit
+git checkout (codigo do commit)
+git checkout HEAD~1 //volta 1 commit
+git checkout HEAD~2 //volta 2 commits
+git checkout main   //volta para o ultimo commit
+**IMPORTANTE** não fazer modificações nos commit com checkout!!
+
+//esse comando ira restaurar o que foi modificado
+git reset //reseta o stage
+git clean -df
+
+
+VOLTANDO PARA O ULTIMO COMMIT!
+        git reset //remove tudo que esta no stage (add .)
+        git clean -df //remove tudo que não esta no stage
+        git checkout -- . // volta o ultimo commit!
+
+
+//esse comando ira deletar um commit sem apagar os arquivos
+git reset --soft (codigo do commit)
+git reset --soft HEAD~1
+
+//esse comando ira deletar um commit e desfazer as modificações
+git reset --hard (codigo do commit)
+git reset --hard HEAD~1
+
+//esse comando ira atualizar o repositorio remoto de acordo com o repositorio remoto
+git pull (remote) (branch) ex: git pull origin main
+
+
+
+
+
+
+
