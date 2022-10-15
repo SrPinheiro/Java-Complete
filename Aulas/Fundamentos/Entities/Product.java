@@ -1,4 +1,4 @@
-package Entities;
+package Fundamentos.Entities;
 
 public class Product {
     private String name;
